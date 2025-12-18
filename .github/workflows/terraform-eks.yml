@@ -20,6 +20,9 @@ jobs:
       - name: Terraform Init
         run: terraform init -upgrade
         working-directory: ./terraform
+      - name: Show Terraform Providers
+        run: terraform providers
+        working-directory: ./terraform
       - name: Terraform Plan
         run: terraform plan -var="region=us-east-1" -var="cluster_name=green-road-eks"
         working-directory: ./terraform
