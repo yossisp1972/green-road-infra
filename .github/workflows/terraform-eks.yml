@@ -16,14 +16,14 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: us-east-1
       - name: Terraform Init
         run: terraform init
         working-directory: terraform
       - name: Terraform Plan
-        run: terraform plan -var="region=${{ secrets.AWS_REGION }}" -var="cluster_name=green-road-eks"
+        run: terraform plan -var="region=us-east-1" -var="cluster_name=green-road-eks"
         working-directory: terraform
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -var="region=${{ secrets.AWS_REGION }}" -var="cluster_name=green-road-eks"
+        run: terraform apply -auto-approve -var="region=us-east-1" -var="cluster_name=green-road-eks"
         working-directory: terraform
