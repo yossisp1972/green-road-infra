@@ -1,10 +1,8 @@
+
 name: Terraform EKS Provision
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   terraform:
