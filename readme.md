@@ -21,5 +21,5 @@ This repository contains Terraform code to provision the AWS EKS cluster and net
 - Go to AWS CloudWatch > Logs > Log groups for application and cluster logs.
 
 ## Application
-- See the green-road-app repo for the Flask app and deployment workflow.
+- See the green-road-app repo for the static HTML quiz app and deployment workflow.
 
